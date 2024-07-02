@@ -8,9 +8,11 @@
 
 	<insert id="writeDao">
 		INSERT INTO freeboard(bnum,bname,btitle,bcontent) VALUES(freeboard_seq.nextval,#{param1},#{param2},#{param3})
-	
-	
 	</insert>
+
+	<select id="listDao" resultType="com.ham1142.freeboard.dto.BoardDto">
+		SELECT * FROM freeboard ORDER BY bnum DESC 
+	</select>
 
 
 </mapper>
